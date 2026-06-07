@@ -1,0 +1,162 @@
+window.aboutSectionHtml = `
+<section class="section" id="about" style="margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 50px;">
+  <h2 class="section-title" style="display: flex; align-items: center; gap: 10px;">
+    <i data-lucide="user" class="neon" style="width: 24px; height: 24px;"></i> ABOUT ME
+  </h2>
+
+  <div class="grid-2" style="margin-top: 20px;">
+    <!-- Left Column: Biography and Skills -->
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div class="card card--glow">
+        <h3 class="card-title" style="display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="book-open" style="color: var(--cyan); width: 18px; height: 18px;"></i> Bio-Protocol
+        </h3>
+        <p class="card-text" style="line-height: 1.7;">
+          I am a passionate <span class="neon">Computer Science Student</span> and developer based in Karnataka, India. 
+          My technical focus lies in backend engineering, relational databases, and crafting fast, clean software architectures.
+        </p>
+        <p class="card-text" style="line-height: 1.7; margin-top: 10px;">
+          I am dedicated to writing clean, maintainable code and solving complex computational problems. 
+          I love learning new technologies, building automation scripts, and tinkering with micro web frameworks like Flask.
+        </p>
+      </div>
+
+      <div class="card card--glow skills-matrix-card">
+        <h3 class="card-title" style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px;">
+          <i data-lucide="code-2" style="color: var(--magenta); width: 18px; height: 18px;"></i> Skills Matrix
+        </h3>
+        
+        <!-- Category: Languages & Backend -->
+        <div style="margin-bottom: 25px;">
+          <h4 style="font-family: 'Orbitron', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 15px 0;">
+            LANGUAGES & BACKEND
+          </h4>
+          
+          <div class="skill-group">
+            <div class="skill-info">
+              <span class="skill-name"><i data-lucide="terminal" style="width: 16px; height: 16px; color: var(--cyan);"></i> Python</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-value="80"></div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-info">
+              <span class="skill-name"><i data-lucide="database" style="width: 16px; height: 16px; color: var(--cyan);"></i> SQL (MySQL / SQLite)</span>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-value="85"></div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-info">
+              <span class="skill-name"><i data-lucide="server" style="width: 16px; height: 16px; color: var(--cyan);"></i> Flask Framework</span>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-value="75"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Frontend & Design -->
+        <div style="margin-bottom: 25px;">
+          <h4 style="font-family: 'Orbitron', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 15px 0;">
+            FRONTEND & MARKUP
+          </h4>
+          
+          <div class="skill-group">
+            <div class="skill-info">
+              <span class="skill-name"><i data-lucide="layout" style="width: 16px; height: 16px; color: var(--magenta);"></i> HTML5 & CSS3</span>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-value="90"></div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-info">
+              <span class="skill-name"><i data-lucide="binary" style="width: 16px; height: 16px; color: var(--magenta);"></i> JavaScript (ES6+)</span>
+              <span class="skill-percent">70%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-value="70"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category: Dev Tools -->
+        <div>
+          <h4 style="font-family: 'Orbitron', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 15px 0;">
+            DEV WORKFLOWS
+          </h4>
+          
+          <div class="skill-group">
+            <div class="skill-info">
+              <span class="skill-name"><i data-lucide="git-merge" style="width: 16px; height: 16px; color: var(--lime);"></i> Git & Version Control</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-value="80"></div>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-info">
+              <span class="skill-name"><i data-lucide="layers" style="width: 16px; height: 16px; color: var(--lime);"></i> Linux & Command Line</span>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="skill-track">
+              <div class="skill-bar" data-value="75"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Timeline -->
+    <div class="card card--glow" style="display: flex; flex-direction: column;">
+      <h3 class="card-title" style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px;">
+        <i data-lucide="milestone" style="color: var(--cyan); width: 18px; height: 18px;"></i> Development Timeline
+      </h3>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-badge"></span>
+          <div class="timeline-date">2024 - PRESENT</div>
+          <h4 class="timeline-title">B.Sc. Computer Science</h4>
+          <div class="timeline-org">University Coursework</div>
+          <p class="timeline-desc">
+            Focusing on algorithms, relational database systems, operating system basics, and object-oriented programming concepts.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-badge"></span>
+          <div class="timeline-date">2024 - PRESENT</div>
+          <h4 class="timeline-title">Independent Web & App Development</h4>
+          <div class="timeline-org">Self-Directed Learning</div>
+          <p class="timeline-desc">
+            Building dynamic websites using Flask, Jinja2, and relational database integrations. Crafting reusable CSS layouts and widgets.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-badge"></span>
+          <div class="timeline-date">2023 - 2024</div>
+          <h4 class="timeline-title">Python Core & Programming Foundations</h4>
+          <div class="timeline-org">Technical Core</div>
+          <p class="timeline-desc">
+            Mastered object-oriented Python, file processing validation systems, relational database scripts, and git workflows.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

@@ -10,6 +10,9 @@
   
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Modular Component Controller -->
+  <script src="static/js/main.js" defer></script>
 </head>
 <body>
   <!-- Theme Initialization Script to prevent flash of wrong color -->
@@ -116,46 +119,5 @@
     <div>© 2026 Thilak Raj</div>
     <div class="muted">Student Portfolio • Static Site</div>
   </footer>
-
-  <script>
-    // Theme switching logic
-    function setTheme(theme) {
-      document.body.className = '';
-      document.body.classList.add('theme-' + theme);
-      
-      // Update active state in UI
-      document.querySelectorAll('.theme-dot').forEach(dot => {
-        dot.classList.remove('active');
-        if (dot.getAttribute('data-theme') === theme) {
-          dot.classList.add('active');
-        }
-      });
-      
-      localStorage.setItem('tron-portfolio-theme', theme);
-    }
-    
-    // Set active dot state on page load
-    (function() {
-      const activeTheme = localStorage.getItem('tron-portfolio-theme') || 'cyan';
-      const activeDot = document.querySelector(`.theme-dot[data-theme="${activeTheme}"]`);
-      if (activeDot) activeDot.classList.add('active');
-    })();
-
-    // Initialize Lucide Icons
-    if (window.lucide) {
-      lucide.createIcons();
-    }
-    
-    // Tiny neon flicker (no dependencies)
-    (function () {
-      const links = document.querySelectorAll('.tron-link');
-      setInterval(() => {
-        links.forEach((a, i) => {
-          if (Math.random() < 0.08) a.classList.add('flicker');
-          setTimeout(() => a.classList.remove('flicker'), 120 + (i % 3) * 40);
-        });
-      }, 1200);
-    })();
-  </script>
 </body>
 </html>
