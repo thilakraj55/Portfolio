@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title or 'Portfolio' }}</title>
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="/static/css/style.css" />
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Theme Initialization Script to prevent flash of wrong color -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('tron-portfolio-theme') || 'cyan';
+      document.body.className = 'theme-' + theme;
+    })();
+  </script>
+
+  <!-- Decorative background -->
+  <div class="tron-bg">
+    <div class="tron-grid"></div>
+    <div class="tron-scanlines"></div>
+    <div class="tron-vignette"></div>
+  </div>
+
+  <header class="tron-header">
+    <div class="brand">
+      <span class="brand-mark">◆</span>
+      <span class="brand-text">Thilak Raj</span>
+    </div>
+
+    <nav class="tron-nav" aria-label="Primary">
+      <a class="tron-link" href="/#home">Home</a>
+      <a class="tron-link" href="/#about">About</a>
+      <a class="tron-link" href="/#projects">Projects</a>
+      <a class="tron-link" href="/#contact">Contact</a>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <!-- Theme Accent Picker -->
+      <div class="theme-picker" title="Select Neon Accent">
+        <div class="theme-dot theme-dot--cyan" data-theme="cyan" onclick="setTheme('cyan')"></div>
+        <div class="theme-dot theme-dot--pink" data-theme="pink" onclick="setTheme('pink')"></div>
+        <div class="theme-dot theme-dot--green" data-theme="green" onclick="setTheme('green')"></div>
+        <div class="theme-dot theme-dot--amber" data-theme="amber" onclick="setTheme('amber')"></div>
+      </div>
+
+      <div class="tron-status" title="System status">
+        <span class="dot dot--on"></span>
+        <span class="status-text">LIVE</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="tron-main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="tron-footer">
+    <div>© 2026 Thilak Raj</div>
+    <div class="muted">Student Portfolio • Flask</div>
+  </footer>
+
+  <script>
+    // Theme switching logic
+    function setTheme(theme) {
+      document.body.className = '';
+      document.body.classList.add('theme-' + theme);
+      
+      // Update active state in UI
+      document.querySelectorAll('.theme-dot').forEach(dot => {
+        dot.classList.remove('active');
+        if (dot.getAttribute('data-theme') === theme) {
+          dot.classList.add('active');
+        }
+      });
+      
+      localStorage.setItem('tron-portfolio-theme', theme);
+    }
+    
+    // Set active dot state on page load
+    (function() {
+      const activeTheme = localStorage.getItem('tron-portfolio-theme') || 'cyan';
+      const activeDot = document.querySelector(`.theme-dot[data-theme="${activeTheme}"]`);
+      if (activeDot) activeDot.classList.add('active');
+    })();
+
+    // Initialize Lucide Icons
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+    
+    // Tiny neon flicker (no dependencies)
+    (function () {
+      const links = document.querySelectorAll('.tron-link');
+      setInterval(() => {
+        links.forEach((a, i) => {
+          if (Math.random() < 0.08) a.classList.add('flicker');
+          setTimeout(() => a.classList.remove('flicker'), 120 + (i % 3) * 40);
+        });
+      }, 1200);
+    })();
+  </script>
+</body>
+</html>
+
